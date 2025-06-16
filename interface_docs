@@ -1,0 +1,84 @@
+what is interface?
+Interface is something which helps 2 system to interact with each other, without one system
+has to know the details of other.
+
+Or in simple term I can say,It helps to achieve abstraction
+
+
+How to define the interface?
+----------------------------
+Interface declaration consist of
+- Modifiers
+- "Interface" Keyword
+- Interface Name
+- Comma separated list of parent interfaces
+
+public(Modifiers)interface Bird(Interface Name){
+  public void fly();
+}
+- only public and Default Modifiers are allowed (Protected and private are not allowed)
+
+interface Bird{
+  public void fly();
+}
+--------------
+Comma separated list of parent interfaces(It can extend from the class)
+
+public interface NonFlyingBirds extends Bird, LivingThings{
+  public void canRun();
+}
+
+-----------------
+
+1. Abstraction:
+   Using interface, we can achieve full abstraction means, we can define WHAT class must do
+   but not HOW it will do
+
+   public interface Bird{
+   public void fly(); // it is just a signature
+  }
+
+
+
+--- Interface can also be used as data types
+------
+Interface can be used as a data Type
+we can not create the object of an interface, but it can g
+
+
+
+------------
+Multiple Inheritance:
+In java Multiple is possible only through interface only
+
+Diamond Problem:
+public class WaterAnimal{
+   public boolean canBreathe(){
+     return true;
+   }
+}
+
+---
+public class LandAnimal{
+  public boolean canBreathe(){
+    return true;
+  }
+}
+
+
+-- Multiple Inheritance
+
+public class Crocodile extends LandAnimal,WaterAnimal{
+}
+
+-- Let's create the object of the crocodile
+
+public class Main{
+  public static void main(String args[]){
+    Crocodile obj=new Crocodile();
+    obj.canBreathe();
+  }
+}
+X- multiple inheritance with classes is not allowed
+but it is possible with interfaces
+
